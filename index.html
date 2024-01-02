@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with Select Input</title>
+  <!-- Link your JavaScript files -->
+  <script src="customers.js" ></script>
+  <script src="products.js" ></script>
+  <script src="cart.js" ></script>
+
+</head>
+<body>
+  <form>
+    <label for="customerSelect">Select Customer:</label>
+    <select id="customerSelect" name="customerSelect">
+      <!-- Populate options from customerOptions -->
+      <script>
+        customers.forEach(option => {
+          document.write(`<option>${option.customerId}</option>`);
+        });
+      </script>
+    </select>
+
+    <label for="productSelect">Select Product:</label>
+    <select id="productSelect" name="productSelect">
+      <!-- Populate options from productOptions -->
+      <script>
+        productOptions.forEach(option => {
+          document.write(`<option value="${option.product}">${option.product}</option>`);
+        });
+      </script>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
+    <button type="button" id="addButton">Add</button>
+
+<script src="cart.js" ></script>
+
+    <div id="cart">
+      <h2>Cart</h2>
+      <table>
+        <th>Product</th><th>Quantity</th><th>Customer ID</th>
+      </table>
+    </div>
+    <button type="button" id="submitButton">Submit</button>
+  </form>
+</body>
+</html>
